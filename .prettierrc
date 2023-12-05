@@ -1,0 +1,14 @@
+{
+  "arrowParens": "always",
+  "jsxSingleQuote": true,
+  "plugins": [
+    "prettier-plugin-sort-json",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-package-perfection",
+    "prettier-plugin-organize-imports"
+  ],
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none"
+}
