@@ -32,7 +32,7 @@ const Header = (props: HeaderProps & { slug: string }) => {
     <>
       <div className='space-y-4'>
         <motion.div
-          className='flex items-center gap-3'
+          className='flex items-start gap-3'
           initial={animation.hide}
           animate={animation.show}
         >
