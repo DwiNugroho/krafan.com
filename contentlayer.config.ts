@@ -29,6 +29,11 @@ const Project = defineDocumentType(() => ({
   filePathPattern: 'projects/**/*.mdx',
   contentType: 'mdx',
   fields: {
+    id: {
+      type: 'number',
+      description: 'The id of the project',
+      required: true
+    },
     name: {
       type: 'string',
       description: 'The name of the project',
@@ -48,16 +53,6 @@ const Project = defineDocumentType(() => ({
       type: 'string',
       description: "The url to the project's github page",
       required: false
-    },
-    image: {
-      type: 'string',
-      description: 'Image for the project',
-      required: true
-    },
-    logo: {
-      type: 'string',
-      description: 'Logo for the project',
-      required: true
     },
     techstack: {
       type: 'list',

@@ -22,8 +22,11 @@ const animation = {
 
 type HeaderProps = Project
 
-const Header = (props: HeaderProps) => {
-  const { name, description, homepage, github, logo, image, techstack } = props
+const Header = (props: HeaderProps & { slug: string }) => {
+  const { name, description, homepage, github, techstack, slug } = props
+
+  const image = `/images/projects/${slug}/cover.png`
+  const logo = `/images/projects/${slug}/logo.png`
 
   return (
     <>

@@ -1,9 +1,10 @@
-import { allProjects } from 'contentlayer/generated'
 import type { Metadata, ResolvingMetadata } from 'next'
 
 import PageTitle from '@/components/page-title'
 import ProjectCard from '@/components/project-card'
 import site from '@/config/site'
+
+import { getAllProjects } from '@/lib/mdx'
 
 export const runtime = 'edge'
 const title = 'Portfolio'
@@ -43,6 +44,8 @@ export const generateMetadata = async (
 }
 
 const ProjectsPage = () => {
+  const projects = getAllProjects()
+
   return (
     <>
       <PageTitle
@@ -52,7 +55,7 @@ const ProjectsPage = () => {
         }
       />
       <div className='grid gap-8 md:grid-cols-2'>
-        {allProjects.map((project) => (
+        {projects.map((project) => (
           <ProjectCard key={project._id} {...project} />
         ))}
       </div>

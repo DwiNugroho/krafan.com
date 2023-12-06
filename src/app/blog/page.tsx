@@ -3,7 +3,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import FilteredPosts from '@/components/filtered-posts'
 import PageTitle from '@/components/page-title'
 import site from '@/config/site'
-import getAllPosts from '@/lib/mdx'
+import { getAllPosts } from '@/lib/mdx'
 
 export const runtime = 'edge'
 const title = 'Blog'

@@ -1,12 +1,12 @@
 import { pick } from 'contentlayer/client'
-import { allBlogPosts } from 'contentlayer/generated'
+import { allBlogPosts, allProjects } from 'contentlayer/generated'
 
-type GetAllPostsProps = {
+type GetAllConfig = {
   limit?: number
   sorted?: boolean
 }
 
-const getAllPosts = (config: GetAllPostsProps = {}) => {
+export const getAllPosts = (config: GetAllConfig = {}) => {
   const { limit = allBlogPosts.length, sorted = true } = config
 
   const posts = allBlogPosts
@@ -25,4 +25,8 @@ const getAllPosts = (config: GetAllPostsProps = {}) => {
   return posts
 }
 
-export default getAllPosts
+export const getAllProjects = (config: GetAllConfig = {}) => {
+  const { limit = allProjects.length } = config
+
+  return allProjects.sort((a, b) => b.id - a.id).slice(0, limit)
+}

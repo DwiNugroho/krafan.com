@@ -51,7 +51,7 @@ export const generateMetadata = async (
       locale: 'en-US',
       images: [
         {
-          url: `${site.url}${project.image}`,
+          url: `${site.url}/images/projects/${params.slug}/cover.png`,
           width: 1200,
           height: 630,
           alt: project.description,
@@ -63,7 +63,7 @@ export const generateMetadata = async (
       ...previousTwitter,
       title: project.name,
       description: project.description,
-      images: [`${site.url}${project.image}`]
+      images: [`${site.url}/images/projects/${params.slug}/cover.png`]
     }
   }
 }
@@ -81,7 +81,7 @@ const ProjectPage = (props: ProjectPageProps) => {
 
   return (
     <>
-      <Header {...project} />
+      <Header {...project} slug={slug} />
       <Mdx code={body.code} />
     </>
   )

@@ -10,7 +10,9 @@ import Image from './mdx/image'
 type ProjectCardProps = Project
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { _id, name, image, description, techstack, slug } = props
+  const { _id, name, description, techstack, slug } = props
+
+  const image = `/images/projects/${slug}/cover.png`
 
   return (
     <div className='w-full'>

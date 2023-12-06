@@ -2,7 +2,7 @@ import Hero from '@/components/hero'
 import Posts from '@/components/posts'
 import Projects from '@/components/projects'
 import site from '@/config/site'
-import getAllPosts from '@/lib/mdx'
+import { getAllPosts, getAllProjects } from '@/lib/mdx'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -18,10 +18,12 @@ const HomePage = () => {
     limit: 4
   })
 
+  const projects = getAllProjects({ limit: 2 })
+
   return (
     <>
       <Hero />
-      <Projects />
+      <Projects projects={projects} />
       <Posts posts={posts} />
     </>
   )
