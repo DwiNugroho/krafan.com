@@ -9,7 +9,7 @@ type GetAllConfig = {
 export const getAllPosts = (config: GetAllConfig = {}) => {
   const { limit = allBlogPosts.length, sorted = true } = config
 
-  const posts = allBlogPosts
+  const posts = [...allBlogPosts]
 
   if (sorted) {
     return posts.sort(
@@ -18,8 +18,8 @@ export const getAllPosts = (config: GetAllConfig = {}) => {
   }
 
   return posts
-    .slice(0, limit)
     .filter((post) => post.published)
+    .slice(0, limit)
     .map((post) =>
       pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'published'])
     )
