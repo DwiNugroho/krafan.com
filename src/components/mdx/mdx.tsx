@@ -16,6 +16,7 @@ import {
 } from '@/components/ui'
 
 import ImageZoom from '../image-zoom'
+import Gallery from './gallery'
 import Image from './image'
 import ItemGrid from './item-grid'
 import Link from './link'
@@ -69,7 +70,8 @@ const components: MDXComponents = {
   ItemGrid,
   Tree,
   Video,
-  LinkCard
+  LinkCard,
+  Gallery
 }
 
 const Mdx = (props: MdxProps) => {
