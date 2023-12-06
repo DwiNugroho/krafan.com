@@ -36,7 +36,13 @@ const Header = (props: HeaderProps & { slug: string }) => {
           initial={animation.hide}
           animate={animation.show}
         >
-          <Image src={logo} width={40} height={40} alt={name} />
+          <Image
+            src={logo}
+            width={40}
+            height={40}
+            alt={name}
+            className='mt-2'
+          />
           <div className='flex flex-col'>
             <div className='text-2xl font-bold'>{name}</div>
             <div>{description}</div>
