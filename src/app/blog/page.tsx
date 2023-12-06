@@ -8,7 +8,7 @@ import { getAllPosts } from '@/lib/mdx'
 export const runtime = 'edge'
 const title = 'Blog'
 const description =
-  'Discover insightful articles on software and knowledge-sharing since December 2023'
+  'Discover insightful articles on software and knowledge-sharing since November 2023'
 
 type BlogPageProps = {
   params: Record<string, never>
@@ -49,7 +49,7 @@ const BlogPage = () => {
     <>
       <PageTitle
         title='Blog'
-        description={`Hey there! I kicked off my article journey back in December 2023, diving into the realms of software and knowledge-sharing. So far, I've dropped ${posts.length} gems on my blog. Feel free to explore them by tossing their titles into the search box below. Happy reading! 📚`}
+        description={`Hey there! I kicked off my article journey back in November 2023, diving into the realms of software and knowledge-sharing. So far, I've dropped ${posts.length} gems on my blog. Feel free to explore them by tossing their titles into the search box below. Happy reading! 📚`}
       />
       <FilteredPosts posts={posts} />
     </>
