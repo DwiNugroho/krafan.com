@@ -10,11 +10,6 @@ export const getAllPosts = (config: GetAllConfig = {}) => {
   const { limit = allBlogPosts.length, sorted = true } = config
 
   const posts = allBlogPosts
-    .slice(0, limit)
-    .filter((post) => post.published)
-    .map((post) =>
-      pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'published'])
-    )
 
   if (sorted) {
     return posts.sort(
@@ -23,6 +18,11 @@ export const getAllPosts = (config: GetAllConfig = {}) => {
   }
 
   return posts
+    .slice(0, limit)
+    .filter((post) => post.published)
+    .map((post) =>
+      pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'published'])
+    )
 }
 
 export const getAllProjects = (config: GetAllConfig = {}) => {
