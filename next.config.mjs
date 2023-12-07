@@ -30,16 +30,6 @@ const nextConfig = {
     return config
   },
 
-  async redirects() {
-    return [
-      {
-        source: '/pc-specs',
-        destination: '/uses',
-        permanent: true
-      }
-    ]
-  },
-
   async headers() {
     return [
       {

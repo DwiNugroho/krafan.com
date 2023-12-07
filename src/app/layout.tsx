@@ -136,21 +136,19 @@ const RootLayout = (props: RootLayoutProps) => {
               draggable={false}
               width={833}
               height={822}
-              quality={10}
+              quality={1}
               className='absolute right-0 top-[-160px] -z-10 opacity-70 dark:opacity-50'
               src='/images/gradient-right.png'
               alt='Gradient background'
-              priority
             />
             <Image
               draggable={false}
               width={866}
               height={811}
-              quality={10}
+              quality={1}
               className='absolute left-0 top-1/2 -z-10 -translate-y-1/2 opacity-90 dark:opacity-50'
               src='/images/gradient-left.png'
               alt='Gradient background'
-              priority
             />
             <Image
               draggable={false}
@@ -160,7 +158,6 @@ const RootLayout = (props: RootLayoutProps) => {
               className='absolute bottom-0 left-1/2 -z-10 opacity-70 dark:opacity-30'
               src='/images/gradient-left.png'
               alt='Gradient background'
-              priority
             />
           </div>
         </Providers>
