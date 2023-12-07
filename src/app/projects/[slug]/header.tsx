@@ -25,11 +25,10 @@ type HeaderProps = Project
 const Header = (props: HeaderProps & { slug: string }) => {
   const { name, description, homepage, github, techstack, slug } = props
 
-  const image = `/images/projects/${slug}/cover.png`
   const logo = `/images/projects/${slug}/logo.png`
 
   return (
-    <>
+    <div className='w-full flex flex-col gap-8'>
       <div className='space-y-4'>
         <motion.div
           className='flex items-start gap-3'
@@ -80,10 +79,15 @@ const Header = (props: HeaderProps & { slug: string }) => {
           )}
         </motion.div>
       </div>
-      <ImageZoom>
+      <ImageZoom
+        zoomImg={{
+          src: `/images/projects/${slug}/cover.png`,
+          alt: name
+        }}
+      >
         <Image
-          src={image}
-          className='rounded-lg my-6'
+          src={`/images/projects/${slug}/cover.png`}
+          className='rounded-lg'
           width={1200}
           height={630}
           lazy={false}
@@ -112,7 +116,7 @@ const Header = (props: HeaderProps & { slug: string }) => {
           })}
         </div>
       )}
-    </>
+    </div>
   )
 }
 export default Header
