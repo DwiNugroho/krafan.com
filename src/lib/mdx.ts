@@ -3,22 +3,16 @@ import { allBlogPosts, allProjects } from 'contentlayer/generated'
 
 type GetAllConfig = {
   limit?: number
-  sorted?: boolean
 }
 
 export const getAllPosts = (config: GetAllConfig = {}) => {
-  const { limit = allBlogPosts.length, sorted = true } = config
+  const { limit = allBlogPosts.length } = config
 
   const posts = [...allBlogPosts]
 
-  if (sorted) {
-    return posts.sort(
-      (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
-    )
-  }
-
   return posts
     .filter((post) => post.published)
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
     .slice(0, limit)
     .map((post) =>
       pick(post, ['_id', 'slug', 'title', 'summary', 'date', 'published'])

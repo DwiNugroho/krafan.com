@@ -29,7 +29,6 @@ const PostCards = (props: PostCardsProps) => {
   const { posts } = props
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className='group grid gap-4 sm:grid-cols-2'
       data-testid='post-cards'
@@ -47,14 +46,6 @@ type PostCardProps = BlogPostCore
 const PostCard = (props: PostCardProps) => {
   const { _id, slug, title, summary, date } = props
   const [formattedDate, setFormattedDate] = React.useState('')
-  // const { data: viewsData, isLoading: viewsIsLoading } = useSWR<Views>(
-  //   `/api/views?slug=${slug}`,
-  //   fetcher
-  // )
-  // const { data: likesData, isLoading: likesIsLoading } = useSWR<Likes>(
-  //   `/api/likes?slug=${slug}`,
-  //   fetcher
-  // )
 
   React.useEffect(() => {
     setFormattedDate(dayjs(date).format('MMMM DD, YYYY'))
@@ -73,31 +64,21 @@ const PostCard = (props: PostCardProps) => {
       data-id='post-card'
     >
       <div className='absolute inset-px -z-20 rounded-[inherit] bg-background' />
-      <Image
-        src={`/images/blog/${slug}/cover.png`}
-        className='rounded-lg'
-        width={1200}
-        height={630}
-        alt={title}
-      />
+      <div className='relative w-full aspect-[40/21] rounded-lg overflow-hidden'>
+        <Image
+          src={`/images/blog/${slug}/cover.png`}
+          fill={true}
+          quality={50}
+          className='w-full h-full object-cover'
+          alt={title}
+        />
+      </div>
       <div className='grow space-y-4'>
         <h2 className='text-xl font-bold'>{title}</h2>
         <div className='text-muted-foreground'>{summary}</div>
       </div>
       <div className='flex items-center gap-2 text-sm'>
         {formattedDate || <Skeleton className='h-5 w-10' />}
-        {/* <div>&middot;</div> */}
-        {/* {likesIsLoading ? (
-          <Skeleton className='h-5 w-10 rounded-md' />
-        ) : (
-          <div>{likesData?.likes} likes</div>
-        )}
-        <div>&middot;</div>
-        {viewsIsLoading ? (
-          <Skeleton className='h-5 w-10 rounded-md' />
-        ) : (
-          <div>{viewsData?.views} views</div>
-        )} */}
       </div>
     </Link>
   )

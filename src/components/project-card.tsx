@@ -19,14 +19,14 @@ const ProjectCard = (props: ProjectCardProps) => {
       <Link
         key={_id}
         href={`/projects/${slug}`}
-        className='group relative flex flex-col overflow-hidden rounded-lg border'
+        className='group relative flex flex-col overflow-hidden rounded-lg border aspect-[40/21]'
       >
         <Image
           src={image}
-          width={1200}
-          height={630}
+          fill={true}
+          quality={50}
           alt={name}
-          className='rounded-lg transition duration-700 ease-in-out group-hover:scale-110'
+          className='rounded-lg transition duration-700 ease-in-out group-hover:scale-110 w-full h-full object-cover'
         />
       </Link>
       <div className='z-20 mx-4 -mt-12 rounded-md border bg-background p-4 backdrop-blur-[8px]'>
