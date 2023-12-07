@@ -14,6 +14,7 @@
     "build": "next build",
     "check-updates": "npx npm-check-updates --interactive --format group",
     "clean": "rm -rf .next .contentlayer coverage playwright-report test-results tsconfig.tsbuildinfo",
+    "commit": "cz",
     "dev": "concurrently \"contentlayer dev\" \"cross-env NODE_OPTIONS='--inspect' next dev\"",
     "format": "prettier -w .",
     "preinstall": "npx only-allow yarn",
@@ -21,6 +22,11 @@
     "lint:fix": "eslint --fix .",
     "prepare": "husky install",
     "start": "next start"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-emoji"
+    }
   },
   "dependencies": {
     "@giscus/react": "^2.3.0",
@@ -45,6 +51,7 @@
     "dayjs": "^1.11.10",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
+    "global": "^4.4.0",
     "hastscript": "^8.0.0",
     "marked": "^10.0.0",
     "next": "^14.0.3",
@@ -94,6 +101,7 @@
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.54.0",
     "eslint-config-next": "^14.0.3",
     "eslint-plugin-playwright": "^0.18.0",
@@ -159,6 +167,13 @@
         ]
       }
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,cjs,mjs,ts,tsx}": [
