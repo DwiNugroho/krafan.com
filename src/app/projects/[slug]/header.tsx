@@ -80,12 +80,7 @@ const Header = (props: HeaderProps & { slug: string }) => {
           )}
         </motion.div>
       </div>
-      <ImageZoom
-        zoomImg={{
-          src: image,
-          alt: name
-        }}
-      >
+      <ImageZoom>
         <Image
           src={image}
           className='rounded-lg my-6'
