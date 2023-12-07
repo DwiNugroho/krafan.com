@@ -11,7 +11,7 @@ const Hero = () => {
         Welcome to 🚀{' '}
         <span className='relative'>
           Krafan
-          <CrossOutUnderline className='absolute inset-x-0 -bottom-3' />
+          <CrossOutUnderline className='absolute !inset-x-0 -bottom-3 w-full' />
         </span>
       </h1>
       <p className='text-2xl font-semibold text-muted-foreground'>
