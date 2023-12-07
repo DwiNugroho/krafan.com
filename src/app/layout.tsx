@@ -140,42 +140,39 @@ const RootLayout = (props: RootLayoutProps) => {
                 quality={1}
                 src='/images/gradient-right.png'
                 alt='Gradient background'
-                className='opacity-70 dark:opacity-50'
+                className='opacity-80 dark:opacity-30'
+                sizes='100%'
                 priority
               />
             </div>
           </div>
-          <div className='absolute inset-0 overflow-hidden -z-10'>
-            {/* <Image
-              draggable={false}
-              fill={false}
-              quality={1}
-              sizes='20vw'
-              className='absolute right-0 top-[-160px] -z-10 opacity-70 dark:opacity-50'
-              src='/images/gradient-right.png'
-              alt='Gradient background'
-              priority
-            /> */}
-            {/* <Image
-              draggable={false}
-              width={866}
-              height={811}
-              quality={1}
-              className='absolute left-0 top-1/2 -z-10 -translate-y-1/2 opacity-90 dark:opacity-50'
-              src='/images/gradient-left.png'
-              alt='Gradient background'
-              priority
-            />
-            <Image
-              draggable={false}
-              width={866}
-              height={811}
-              quality={10}
-              className='absolute bottom-0 left-1/2 -z-10 opacity-70 dark:opacity-30'
-              src='/images/gradient-left.png'
-              alt='Gradient background'
-              priority
-            /> */}
+          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute left-0 top-1/2 -z-10 -translate-y-1/2'>
+            <div className='w-full aspect-square relative'>
+              <Image
+                draggable={false}
+                fill
+                quality={1}
+                src='/images/gradient-left.png'
+                alt='Gradient background'
+                className='opacity-80 dark:opacity-30'
+                sizes='100%'
+                priority
+              />
+            </div>
+          </div>
+          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute bottom-0 left-1/2 -z-10'>
+            <div className='w-full aspect-square relative'>
+              <Image
+                draggable={false}
+                fill
+                quality={1}
+                src='/images/gradient-left.png'
+                alt='Gradient background'
+                className='opacity-80 dark:opacity-30'
+                sizes='100%'
+                priority
+              />
+            </div>
           </div>
         </Providers>
       </body>

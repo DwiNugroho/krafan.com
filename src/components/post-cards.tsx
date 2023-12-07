@@ -69,7 +69,8 @@ const PostCard = (props: PostCardProps) => {
           src={`/images/blog/${slug}/cover.png`}
           fill={true}
           quality={50}
-          className='w-full h-full object-cover'
+          sizes='100%'
+          className='w-full h-full object-cover relative'
           alt={title}
         />
       </div>

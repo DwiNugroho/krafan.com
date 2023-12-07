@@ -24,9 +24,10 @@ const ProjectCard = (props: ProjectCardProps) => {
         <Image
           src={image}
           fill={true}
+          sizes='100%'
           quality={50}
           alt={name}
-          className='rounded-lg transition duration-700 ease-in-out group-hover:scale-110 w-full h-full object-cover'
+          className='rounded-lg transition duration-700 ease-in-out group-hover:scale-110 w-full h-full object-cover relative'
         />
       </Link>
       <div className='z-20 mx-4 -mt-12 rounded-md border bg-background p-4 backdrop-blur-[8px]'>
