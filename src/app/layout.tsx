@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
+
 import Image from 'next/image'
 
 import Footer from '@/components/footer'
@@ -131,17 +132,31 @@ const RootLayout = (props: RootLayoutProps) => {
           </main>
           <Toaster />
           <Footer />
+          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute right-0 top-[-160px] -z-10 '>
+            <div className='w-full aspect-square relative'>
+              <Image
+                draggable={false}
+                fill
+                quality={1}
+                src='/images/gradient-right.png'
+                alt='Gradient background'
+                className='opacity-70 dark:opacity-50'
+                priority
+              />
+            </div>
+          </div>
           <div className='absolute inset-0 overflow-hidden -z-10'>
-            <Image
+            {/* <Image
               draggable={false}
-              width={833}
-              height={822}
+              fill={false}
               quality={1}
+              sizes='20vw'
               className='absolute right-0 top-[-160px] -z-10 opacity-70 dark:opacity-50'
               src='/images/gradient-right.png'
               alt='Gradient background'
-            />
-            <Image
+              priority
+            /> */}
+            {/* <Image
               draggable={false}
               width={866}
               height={811}
@@ -149,6 +164,7 @@ const RootLayout = (props: RootLayoutProps) => {
               className='absolute left-0 top-1/2 -z-10 -translate-y-1/2 opacity-90 dark:opacity-50'
               src='/images/gradient-left.png'
               alt='Gradient background'
+              priority
             />
             <Image
               draggable={false}
@@ -158,7 +174,8 @@ const RootLayout = (props: RootLayoutProps) => {
               className='absolute bottom-0 left-1/2 -z-10 opacity-70 dark:opacity-30'
               src='/images/gradient-left.png'
               alt='Gradient background'
-            />
+              priority
+            /> */}
           </div>
         </Providers>
       </body>
