@@ -1,7 +1,7 @@
 'use client'
 
 const editURL = (slug: string) =>
-  `https://github.com/DwiNugroho/krafan.com/blob/main/src/content/blog/${slug}.mdx?plain=1`
+  `https://github.com/DwiNugroho/krafan.com/blob/master/src/content/blog/${slug}.mdx?plain=1`
 
 type FooterProps = {
   slug: string
