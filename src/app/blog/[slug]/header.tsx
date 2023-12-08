@@ -91,9 +91,10 @@ const Header = (props: HeaderProps) => {
       >
         <Image
           src={`/images/blog/${slug}/cover.png`}
-          className='rounded-lg'
-          width={1200}
-          height={630}
+          className='rounded-lg aspect-[40/21] relative'
+          sizes='100%'
+          fill
+          quality={100}
           lazy={false}
           alt={title}
         />

@@ -79,21 +79,24 @@ const Header = (props: HeaderProps & { slug: string }) => {
           )}
         </motion.div>
       </div>
-      <ImageZoom
-        zoomImg={{
-          src: `/images/projects/${slug}/cover.png`,
-          alt: name
-        }}
-      >
-        <Image
-          src={`/images/projects/${slug}/cover.png`}
-          className='rounded-lg'
-          width={1200}
-          height={630}
-          lazy={false}
-          alt={name}
-        />
-      </ImageZoom>
+      <div className='w-full'>
+        <ImageZoom
+          zoomImg={{
+            src: `/images/projects/${slug}/cover.png`,
+            alt: name
+          }}
+        >
+          <Image
+            src={`/images/projects/${slug}/cover.png`}
+            className='rounded-lg aspect-[40/21] relative'
+            sizes='100%'
+            fill
+            quality={100}
+            lazy={false}
+            alt={name}
+          />
+        </ImageZoom>
+      </div>
       <div className='mb-8 flex flex-wrap gap-2'>
         {techstack.map((t, index) => {
           const { label } = t

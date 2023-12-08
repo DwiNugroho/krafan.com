@@ -133,7 +133,7 @@ const RootLayout = (props: RootLayoutProps) => {
           <Toaster />
           <Footer />
           <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute right-0 top-[-160px] -z-10 '>
-            <div className='w-full aspect-[150/149] relative'>
+            <div className='w-full aspect-[750/717] relative'>
               <Image
                 draggable={false}
                 fill
@@ -147,7 +147,7 @@ const RootLayout = (props: RootLayoutProps) => {
             </div>
           </div>
           <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute left-0 top-1/2 -z-10 -translate-y-1/2'>
-            <div className='w-full aspect-[150/149] relative'>
+            <div className='w-full aspect-[750/717] relative'>
               <Image
                 draggable={false}
                 fill
@@ -161,7 +161,7 @@ const RootLayout = (props: RootLayoutProps) => {
             </div>
           </div>
           <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute bottom-0 left-1/2 -z-10'>
-            <div className='w-full aspect-[150/149] relative'>
+            <div className='w-full aspect-[750/717] relative'>
               <Image
                 draggable={false}
                 fill

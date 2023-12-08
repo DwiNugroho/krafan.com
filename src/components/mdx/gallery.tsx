@@ -1,9 +1,9 @@
 'use client'
 
-import cn from '@/utils/cn'
-
 import ImageZoom from '../image-zoom'
 import Image from './image'
+
+import cn from '@/utils/cn'
 
 export type GalleryProps = {
   sources: string[]
@@ -15,17 +15,18 @@ const Gallery = ({ sources }: GalleryProps) => {
       {sources.map((img, index) => (
         <div
           key={index}
-          className={cn('w-full', {
-            'col-span-2 row-span-2 h-full': index === 1
-          })}
+          className={cn({ 'col-span-2 row-span-2': index === 1 })}
         >
           <ImageZoom zoomImg={{ src: img }}>
             <Image
               src={img}
-              width={1200}
-              height={630}
+              fill
+              sizes='100%'
               alt='krafan - gallery'
-              className='rounded'
+              className={cn('w-full relative rounded-md', {
+                'aspect-[40/21.4]': index === 1,
+                'aspect-[40/21]': index !== 1
+              })}
             />
           </ImageZoom>
         </div>
