@@ -94,28 +94,23 @@ const Header = (props: HeaderProps & { slug: string }) => {
           alt={name}
         />
       </ImageZoom>
-      {techstack.length > 0 && (
-        <div className='mb-8 flex flex-wrap gap-2'>
-          {techstack.map((t, index) => {
-            const { label } = t
+      <div className='mb-8 flex flex-wrap gap-2'>
+        {techstack.map((t, index) => {
+          const { label } = t
 
-            const Icon = getIconByName(label)
+          const Icon = getIconByName(label)
 
-            return (
-              <div
-                key={label}
-                className='flex items-center justify-center gap-1'
-              >
-                <Icon strokeWidth={1.5} size={16} />
-                <div className='text-sm'>
-                  {label}
-                  {index < techstack.length - 1 && ','}
-                </div>
+          return (
+            <div key={label} className='flex items-center justify-center gap-1'>
+              <Icon strokeWidth={1.5} size={16} />
+              <div className='text-sm'>
+                {label}
+                {index < techstack.length - 1 && ','}
               </div>
-            )
-          })}
-        </div>
-      )}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
