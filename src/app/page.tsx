@@ -23,8 +23,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <Projects projects={projects} />
       <Posts posts={posts} />
+      <Projects projects={projects} />
     </>
   )
 }

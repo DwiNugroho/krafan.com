@@ -1,63 +1,137 @@
 ---
 title: "Optimize, Enhance, Boost! 🚀 Exploring Next/Image in Next.js for better Web Performance!"
-date: '2023-11-28T00:00:00Z'
-modifiedTime: '2023-11-28T00:00:00Z'
+date: '2023-12-09T00:00:00Z'
+modifiedTime: '2023-12-09T00:00:00Z'
 summary: Secret sauce to supercharge your Next.js website's performance by diving into the best practices for loading images
-published: false
+published: true
 ---
 
-Hey there, awesome developers! 👋 Get ready to supercharge your web performance game with the powerhouse that is Next/Image in Next.js. Let's embark on this exciting journey to enhance your site's speed and user experience! 🌐💨
+👋 Recently, I unleashed my personal website – [krafan.com](https://krafan.com), showcasing my musings and an assortment of projects in the form of a portfolio. Imagine my surprise when I decided to put my website through the paces using the nifty tool at [pagespeed](https://pagespeed.web.dev/) and found my website performance score at 82.
 
-## Introduction
+<Image src="/images/blog/exploring-next-image-in-next-js/screenshot-1.png" className="w-full md:w-[80%] mx-auto aspect-[5/2] relative rounded-md" sizes="100%" alt="pagespeed score" fill />
 
-Web performance is the key to a delightful user experience. 📈 Buckle up as we explore the critical role image optimization plays in boosting your website's performance.
+Digging into the diagnostics provided by [pagespeed](https://pagespeed.web.dev/), the main culprit unveiled itself – the images on my website were larger than necessary.
 
-## Introducing Next/Image in Next.js
+<Image src="/images/blog/exploring-next-image-in-next-js/screenshot-2.png" className="w-full md:w-[80%] mx-auto aspect-[5/2] relative rounded-md" sizes="100%" alt="diagnostic" fill />
 
-Say hello to Next/Image, your new performance ally in the Next.js universe! 🖼️ Discover how it effortlessly integrates into your projects, automagically optimizing images and saving you from a headache.
+Picture this: a user visiting your site on their mobile device expecting an image of 400px × 200px, and you hit them with a whopping 2000px × 1000px image. That's a colossal 5x larger than what your users really need. So, let's dive into the realm of supercharging image optimization on your [Next.js](https://nextjs.org/) website using the incredible power of [next/image](https://nextjs.org/docs/pages/api-reference/components/image).
 
-## How Next/Image Works and What Happens Behind the Scenes?
+> Images take up 50% of the total bytes on web pages.- Next.js
 
-Ever wondered about the magic behind Next/Image? 🎭 Dive deep into the inner workings, uncovering the fascinating steps and processes that take place behind the scenes. Spoiler alert: lazy loading and image optimization are the secret sauce! 🌟
+## Unleashing the Power of next/image! 🚀
 
-{/* ![Next/Image Magic](image-magic.gif) */}
+So, what's the buzz about [next/image](https://nextjs.org/docs/pages/api-reference/components/image), and why should you care? Well, [next/image](https://nextjs.org/docs/pages/api-reference/components/image) is a built-in component in Next.js, making its grand entrance with the release of Next.js version 10.0.0 in October 2020. Why is it a game-changer for your Next.js website? Simple – images often pose a significant challenge to a website's performance, and the existing solutions are either costly, complex, or both. Now, let's dive into the wonders that [next/image](https://nextjs.org/docs/pages/api-reference/components/image) brings to the table!
 
-## Measuring Performance with Lighthouse
+### Lazy Loading 🎩
+By default, [next/image](https://nextjs.org/docs/pages/api-reference/components/image) embraces lazy loading, meaning your images will only be loaded when they are about to enter the user's viewport. It's like magic – optimizing load times and user experience.
 
-Tools in hand, let's measure that performance! 🛠️ Learn how to use Lighthouse to evaluate your website's speed and witness firsthand the impact of Next/Image on those Lighthouse performance scores.
+### Preloading 🚀
+Even though lazy loading is the default, you can elevate the priority of certain images by using the `priority` prop. This ensures that crucial images are preloaded before the browser tackles other rendering tasks.
 
-## Crafting Strategies for Image Format and Resolution
+### Automatic Image Resizing 📏
+Say goodbye to the hassle of manual resizing! With [next/image](https://nextjs.org/docs/pages/api-reference/components/image), images can automatically adjust to smaller sizes based on the user's screen. It's a seamless way to enhance performance without sacrificing quality.
 
-Choosing the right format and resolution is an art form! 🎨 We'll guide you through the decision-making process – whether it's JPG, PNG, or WebP – and help you determine the perfect resolution for optimal responsiveness.
+### Format Transformation for Modern Browsers 🔄
+This one's a game-changer! [next/image](https://nextjs.org/docs/pages/api-reference/components/image) automatically transforms JPEG, PNG, or another format files into the more modern WebP format, potentially reducing image sizes by around 30% for users whose browsers support WebP.
 
-## Implementing Next/Image in Your Portfolio
+## Implementation Unveiled! 🛠️
 
-Let's put theory into action! 💻 Follow along as we implement Next/Image in a real-world scenario – the creation of an awesome portfolio on krafan.com. Explore the implementation details and the fantastic results achieved.
+Now, let's get our hands dirty and explore how we can seamlessly implement the Next.js Image Component. Brace yourself for an exhilarating journey into the realm of developer experience!
 
-{/* ![Portfolio Implementation](portfolio-example.png) */}
+### Getting Started
 
-## Tackling Common Challenges
+Before the advent of [next/image](https://nextjs.org/docs/pages/api-reference/components/image), we'd handle images like this:
 
-Ready to overcome hurdles like a pro! 🤓 Explore solutions to common challenges you might encounter when using Next/Image, along with practical tips and tricks for maximizing efficiency.
+```html
+<img src="/image.jpg" width="160" height="160" alt="your image title">
+```
 
-## Mastering Cache Control and Prioritization
+Now, with the magic of [next/image](https://nextjs.org/docs/pages/api-reference/components/image), it's as easy as importing the component and transforming your HTML `<img>` element:
 
-Unlock the secrets of cache control! 🔐 Delve into how Next/Image leverages cache control to speed up image loading. Discover strategies for prioritizing crucial images and optimizing the overall user experience.
+```jsx
+import Image from 'next/image'
 
-## Before and After: A Performance Case Study
+export default MyComponent() {
+  return (
+    <Image
+      src="/image.jpg"
+      width={160}
+      height={160}
+      alt="your image title"
+    >
+  )
+}
 
-Let's crunch some numbers! 📊 Take a deep dive into a performance case study – witness the impact of Next/Image on krafan.com's performance through side-by-side analysis, complete with graphs and data showcasing the impressive results.
+```
 
-## Conclusion
+### Pro Tips 🚀
 
-Summing it up! 🎉 Reflect on the key findings from our deep dive into Next/Image. Consider making it your go-to tool for turbocharging web performance.
+If you prefer fixed-size images, the approach above works like a charm. But what if you're into responsive images? Fear not, here's a slick method for you:
 
-## Additional Resources and References
+```jsx
+import Image from 'next/image'
 
-Ready to dive deeper? 🕵️‍♀️ Explore links to Next/Image documentation and other valuable resources for those eager to embark on their own performance-enhancing journey.
+export default MyComponent() {
+  return (
+    <div className="w-full aspect-square relative">
+      <Image
+        src="/image.jpg"
+        fill
+        sizes="100%"
+        className="relative w-full h-full object-cover"
+        alt="your image title"
+      >
+    </div>
+  )
+}
+```
 
-## Share Your Thoughts and Let's Chat!
+In this example, I've thrown in some [TailwindCSS](https://tailwindcss.com/) for good measure. Take note that the parent element must have a relative position and a fixed aspect ratio. This ensures that the loaded image adheres to the parent's dimensions.
 
-We want to hear from you! 🗣️ Share your experiences or throw in your burning questions in the comments below. Let's build a community and grow together!
+### ⚠️ Caution: Image Format Magic Ahead!
 
-Happy coding! 💻✨
+If you desire to load your images in modern formats like WebP, a bit of magic needs to happen in your `next.config.js`. Add the following snippet:
+
+```js
+module.exports = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
+}
+```
+Incorporate this wisdom, and watch your images dazzle in the world of modern formats.
+
+## The Behind-the-Scenes of next/image! 🎬
+
+So, what's the magic happening behind the curtain when you unleash the [next/image](https://nextjs.org/docs/pages/api-reference/components/image) Component? Let's peel back the layers and uncover the captivating process!
+
+In a nutshell, the Next.js Image Component shoots a request back to the Next.js backend, armed with the values from the `src` prop and other essential tidbits. The backend then flexes its muscles with some image processing wizardry – we're talking format transformations, size tweaks, quality adjustments, and more.
+
+This enchanting image processing dance is choreographed by none other than the [Sharp](https://github.com/lovell/sharp) module. It's the behind-the-scenes maestro that orchestrates the visual symphony.
+
+Once the backend has worked its magic, the transformed image is handed back to the client, ready to make its grand debut on the user's screen. And there you have it – the seamless, behind-the-scenes spectacle of the Next.js Image Component in action! 🌈✨
+
+## The Power of Optimization! 💪
+
+Now, the moment of truth! After diving into the world of image optimization with [next/image](https://nextjs.org/docs/pages/api-reference/components/image), let's unveil the dazzling results of this performance overhaul.
+
+<Image src="/images/blog/exploring-next-image-in-next-js/screenshot-3.png" className="w-full md:w-[80%] mx-auto aspect-[5/2] relative rounded-md" sizes="100%" alt="result" fill />
+
+Surprisingly, my website's performance score skyrocketed to a solid 95 points! 🚀 Just imagine the impact – from a decent 82 to a stellar 95. These numbers speak volumes about the significance of how we handle image loading on our websites. Witnessing this leap in performance, it's crystal clear – the way we load images plays a pivotal role in shaping the user experience.
+
+## 🚀 Conclusion: Elevating Your Next.js Image Game!
+
+In the dynamic world of web development, optimizing images is not just a good practice; it's a game-changer for performance. 🌐✨ After delving into the intricacies of Next.js Image Component, the results are nothing short of spectacular.
+
+1. **Performance Soars**: Witnessing my website's performance score soar from 82 to a staggering 95 was like watching a rocket launch! 🚀🌟
+2. **Seamless Implementation**: Implementing the Next.js Image Component was a breeze, revolutionizing the way images are handled on my site. 🛠️🖼️
+3. **Format Magic**: Unleashing the magic of WebP format through the next.config.js snippet added a modern twist to image loading. 🎩✨
+4. **Behind-the-Scenes Wizardry**: The Sharp module's behind-the-scenes wizardry in image processing brought a visual symphony to my website. 🎬🔍
+
+## 🌐 Sources
+- [clouddevs.com - Optimizing Images in NEXT.js](https://clouddevs.com/next/optimizing-images/)
+- [nextjs.org - Image Optimization](https://nextjs.org/docs/pages/building-your-application/optimizing/images)
+- [imagekit.io - Next.js Image Optimization: A Guide for Web Developers](https://imagekit.io/blog/nextjs-image-optimization/)
+- [jamstack.consulting - NextJS Images: 9 Best Practices To Optimize](https://jamstack.consulting/posts/nextjs-images)
+- [medium.com - Best Practices to improve Next.js App performance](https://medium.com/@entrepreneurali/best-practices-to-improve-next-js-app-performance-64d7def32792)
+- [prismic.io - Next.js Image Optimization Using next/image](https://prismic.io/blog/nextjs-image-component-optimization)
