@@ -132,46 +132,48 @@ const RootLayout = (props: RootLayoutProps) => {
           </main>
           <Toaster />
           <Footer />
-          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute right-0 top-[-160px] -z-10 '>
-            <div className='w-full aspect-square relative'>
-              <Image
-                draggable={false}
-                fill
-                quality={1}
-                src='/images/gradient-right.png'
-                alt='Gradient background'
-                className='opacity-80 dark:opacity-30'
-                sizes='100%'
-                priority
-              />
+          <div className='absolute inset-0 -z-10 overflow-x-hidden'>
+            <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute right-0 top-[-160px] -z-10 '>
+              <div className='w-full aspect-square relative'>
+                <Image
+                  draggable={false}
+                  fill
+                  quality={1}
+                  src='/images/gradient-right.png'
+                  alt='Gradient background'
+                  className='opacity-80 dark:opacity-30'
+                  sizes='100%'
+                  priority
+                />
+              </div>
             </div>
-          </div>
-          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute left-0 top-1/2 -z-10 -translate-y-1/2'>
-            <div className='w-full aspect-square relative'>
-              <Image
-                draggable={false}
-                fill
-                quality={1}
-                src='/images/gradient-left.png'
-                alt='Gradient background'
-                className='opacity-80 dark:opacity-30'
-                sizes='100%'
-                priority
-              />
+            <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute left-0 top-1/2 -z-10 -translate-y-1/2'>
+              <div className='w-full aspect-square relative'>
+                <Image
+                  draggable={false}
+                  fill
+                  quality={1}
+                  src='/images/gradient-left.png'
+                  alt='Gradient background'
+                  className='opacity-80 dark:opacity-30'
+                  sizes='100%'
+                  priority
+                />
+              </div>
             </div>
-          </div>
-          <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute bottom-0 left-1/2 -z-10'>
-            <div className='w-full aspect-square relative'>
-              <Image
-                draggable={false}
-                fill
-                quality={1}
-                src='/images/gradient-left.png'
-                alt='Gradient background'
-                className='opacity-80 dark:opacity-30'
-                sizes='100%'
-                priority
-              />
+            <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute bottom-0 left-1/2 -z-10'>
+              <div className='w-full aspect-square relative'>
+                <Image
+                  draggable={false}
+                  fill
+                  quality={1}
+                  src='/images/gradient-left.png'
+                  alt='Gradient background'
+                  className='opacity-80 dark:opacity-30'
+                  sizes='100%'
+                  priority
+                />
+              </div>
             </div>
           </div>
         </Providers>
