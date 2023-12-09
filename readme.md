@@ -1,4 +1,6 @@
-## Krafan.com 🚀
+## KRAFAN.COM 🚀
+
+![krafan.com](https://krafan.com/images/og.png)
 
 Hey there! 👋 I'm [Dwi Nugroho](https://github.com/DwiNugroho), I build this digital sanctuary known as [krafan.com](https://krafan.com). Buckle up, as I take you on a journey through my creative portfolio and digital garden.
 
@@ -30,6 +32,7 @@ Excited to jump aboard this digital caravan? Fantastic! Here's how you can join 
 If you're unsure about where to start, check out the [Issues](https://github.com/DwiNugroho/krafan.com/issues) section for some inspiration. Found a bug? Want to suggest an improvement? Issues are the place to be!
 
 Cheers,
+
 [Dwi Nugroho](https://github.com/DwiNugroho) 🚀
 
 P.S. Don't forget to ⭐️ the repo if you enjoyed your visit!
