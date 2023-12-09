@@ -32,7 +32,6 @@ Excited to jump aboard this digital caravan? Fantastic! Here's how you can join 
 If you're unsure about where to start, check out the [Issues](https://github.com/DwiNugroho/krafan.com/issues) section for some inspiration. Found a bug? Want to suggest an improvement? Issues are the place to be!
 
 Cheers,
-
 [Dwi Nugroho](https://github.com/DwiNugroho) 🚀
 
 P.S. Don't forget to ⭐️ the repo if you enjoyed your visit!
