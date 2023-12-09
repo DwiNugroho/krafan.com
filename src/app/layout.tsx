@@ -4,7 +4,6 @@ import localFont from 'next/font/local'
 
 import Image from 'next/image'
 
-import Analytics from '@/components/analytics'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Toaster from '@/components/toaster'
@@ -124,7 +123,6 @@ const RootLayout = (props: RootLayoutProps) => {
     >
       <body className='relative overflow-x-hidden font-default'>
         <Providers>
-          <Analytics />
           <Header />
           <main
             id='skip-nav'
