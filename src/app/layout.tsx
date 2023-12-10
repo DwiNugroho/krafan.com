@@ -4,9 +4,11 @@ import localFont from 'next/font/local'
 
 import Image from 'next/image'
 
+import Analytics from '@/components/analytics'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Toaster from '@/components/toaster'
+
 import site from '@/config/site'
 import '@/styles/globals.css'
 import cn from '@/utils/cn'
@@ -132,6 +134,7 @@ const RootLayout = (props: RootLayoutProps) => {
           </main>
           <Toaster />
           <Footer />
+          <Analytics />
           <div className='absolute inset-0 -z-10 overflow-x-hidden'>
             <div className='w-[100vw] sm:w-[80vw] lg:w-[40vw] absolute right-0 top-[-160px] -z-10 '>
               <div className='w-full aspect-square relative'>
