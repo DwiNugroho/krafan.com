@@ -59,9 +59,7 @@ export const generateMetadata = async (
         {
           url: `${site.url}/api/og?title=${post.title}&date=${
             post.date.split('T')[0]
-          }&url=krafan.com/blog&img=${site.url}/images/blog/${
-            params.slug
-          }/cover.png`,
+          }&url=krafan.com/blog&img=/images/blog/${params.slug}/cover.png`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -76,9 +74,7 @@ export const generateMetadata = async (
       images: [
         `${site.url}/api/og?title=${post.title}&date=${
           post.date.split('T')[0]
-        }&url=krafan.com/blog&img=${site.url}/images/blog/${
-          params.slug
-        }/cover.png`
+        }&url=krafan.com/blog&img=/images/blog/${params.slug}/cover.png`
       ]
     }
   }
