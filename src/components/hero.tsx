@@ -19,7 +19,7 @@ const Hero = () => {
           preRenderFirstString={true}
           sequence={[
             // Same substring at the start will only be typed once, initially
-            'Digial Garden',
+            'Digital Garden',
             1000,
             'Creative Portfolio',
             1000
