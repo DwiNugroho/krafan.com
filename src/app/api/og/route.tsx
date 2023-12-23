@@ -87,7 +87,7 @@ export const GET = async (req: Request) => {
               <div tw='h-full flex-1 flex relative overflow-hidden rounded-lg border border-gray-800'>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`${site.url}/_next/image?url=${img}&w=1920&q=1`}
+                  src={`${site.url}${img}`}
                   alt={title}
                   style={{
                     width: '100%',
