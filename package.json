@@ -25,7 +25,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-emoji"
+      "path": "./node_modules/cz-emoji-conventional"
     }
   },
   "dependencies": {
@@ -49,6 +49,7 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "contentlayer": "^0.3.4",
+    "cz-emoji-conventional": "^1.0.2",
     "dayjs": "^1.11.10",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
@@ -108,7 +109,7 @@
     "eslint-plugin-playwright": "^0.18.0",
     "eslint-plugin-testing-library": "^6.2.0",
     "fast-xml-parser": "^4.3.2",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "jsdom": "^22.1.0",
     "lint-staged": "^15.1.0",
     "msw": "^2.0.8",
@@ -169,19 +170,13 @@
       }
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
-    "*.{js,jsx,cjs,mjs,ts,tsx}": [
-      "eslint"
+    "src/**/*.{js,mjs,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write --ignore-path .gitignore ."
     ],
-    "*.{json,css,md,mdx,js,jsx,ts,tsx,cjs,mjs}": [
-      "prettier -c"
+    "src/**/*.{css,scss,md,html,json}": [
+      "prettier --write --ignore-path .gitignore ."
     ]
   },
   "packageManager": "yarn@4.0.0"

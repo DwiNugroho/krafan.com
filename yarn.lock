@@ -4426,6 +4426,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: "npm:^4.1.0"
+    supports-color: "npm:^7.1.0"
+  checksum: 4a3fef5cc34975c898ffe77141450f679721df9dde00f6c304353fa9c8b571929123b26a0e4617bde5018977eb655b31970c297b91b63ee83bb82aeb04666880
+  languageName: node
+  linkType: hard
+
 "chalk@npm:5.3.0":
   version: 5.3.0
   resolution: "chalk@npm:5.3.0"
@@ -4451,16 +4461,6 @@ __metadata:
     ansi-styles: "npm:^4.1.0"
     supports-color: "npm:^7.1.0"
   checksum: ee650b0a065b3d7a6fda258e75d3a86fc8e4effa55871da730a9e42ccb035bf5fd203525e5a1ef45ec2582ecc4f65b47eb11357c526b84dd29a14fb162c414d2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: "npm:^4.1.0"
-    supports-color: "npm:^7.1.0"
-  checksum: 4a3fef5cc34975c898ffe77141450f679721df9dde00f6c304353fa9c8b571929123b26a0e4617bde5018977eb655b31970c297b91b63ee83bb82aeb04666880
   languageName: node
   linkType: hard
 
@@ -4764,7 +4764,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commitizen@npm:^4.0.3":
+"commitizen@npm:^4.0.3, commitizen@npm:^4.3.0":
   version: 4.3.0
   resolution: "commitizen@npm:4.3.0"
   dependencies:
@@ -5051,6 +5051,17 @@ __metadata:
     "@commitlint/load":
       optional: true
   checksum: 895d64bb60b7014ec98fdbc211b454e3a1d585b10a818a4a3cf4c0f4b8576712d2daf4f8eb670e6c68e10bbb72ed73ab73b1a9e4673be41405591454e5bf5734
+  languageName: node
+  linkType: hard
+
+"cz-emoji-conventional@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "cz-emoji-conventional@npm:1.0.2"
+  dependencies:
+    chalk: "npm:4.1.2"
+    commitizen: "npm:^4.3.0"
+    word-wrap: "npm:^1.2.3"
+  checksum: 51ef6c6ce1ad466b81bc691def262845d1dc986203028c5ee92a35ad45a81920628f0249167354b23a337254c4576aa63c2c288ca773e6df199feed48e9861a0
   languageName: node
   linkType: hard
 
@@ -7395,12 +7406,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.3":
-  version: 8.0.3
-  resolution: "husky@npm:8.0.3"
+"husky@npm:^9.0.11":
+  version: 9.0.11
+  resolution: "husky@npm:9.0.11"
   bin:
-    husky: lib/bin.js
-  checksum: 6722591771c657b91a1abb082e07f6547eca79144d678e586828ae806499d90dce2a6aee08b66183fd8b085f19d20e0990a2ad396961746b4c8bd5bdb619d668
+    husky: bin.mjs
+  checksum: 2c787dcf74a837fc9a4fea7da907509d4bd9a289f4ea10ecc9d86279e4d4542b0f5f6443a619bccae19e265f2677172cc2b86aae5c932a35a330cc227d914605
   languageName: node
   linkType: hard
 
@@ -8386,6 +8397,7 @@ __metadata:
     contentlayer: "npm:^0.3.4"
     cross-env: "npm:^7.0.3"
     cz-conventional-changelog: "npm:^3.3.0"
+    cz-emoji-conventional: "npm:^1.0.2"
     dayjs: "npm:^1.11.10"
     eslint: "npm:^8.54.0"
     eslint-config-next: "npm:^14.0.3"
@@ -8396,7 +8408,7 @@ __metadata:
     github-slugger: "npm:^2.0.0"
     global: "npm:^4.4.0"
     hastscript: "npm:^8.0.0"
-    husky: "npm:^8.0.3"
+    husky: "npm:^9.0.11"
     jsdom: "npm:^22.1.0"
     lint-staged: "npm:^15.1.0"
     marked: "npm:^10.0.0"
@@ -13928,7 +13940,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"word-wrap@npm:^1.0.3":
+"word-wrap@npm:^1.0.3, word-wrap@npm:^1.2.3":
   version: 1.2.5
   resolution: "word-wrap@npm:1.2.5"
   checksum: e0e4a1ca27599c92a6ca4c32260e8a92e8a44f4ef6ef93f803f8ed823f486e0889fc0b93be4db59c8d51b3064951d25e43d434e95dc8c960cc3a63d65d00ba20
