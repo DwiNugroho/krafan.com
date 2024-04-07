@@ -25,7 +25,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-emoji"
+      "path": "./node_modules/cz-emoji-conventional"
     }
   },
   "dependencies": {
@@ -48,6 +48,7 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "contentlayer": "^0.3.4",
+    "cz-emoji-conventional": "^1.0.2",
     "dayjs": "^1.11.10",
     "framer-motion": "^10.16.5",
     "github-slugger": "^2.0.0",
