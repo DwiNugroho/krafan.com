@@ -94,13 +94,13 @@ export const HERO_LINKS: HeroLinks = [
     id: 'github',
     label: 'GitHub',
     icon: <IconBrandGithub size={28} />,
-    href: 'https://github.com/DwiNugroho'
+    href: 'https://github.com/dwinugroho'
   },
   {
     id: 'instagram',
     label: 'Instagram',
     icon: <IconBrandInstagram size={28} />,
-    href: 'https://www.instagram.com/krafanid'
+    href: 'https://www.instagram.com/dwirocks'
   },
   {
     id: 'linkedin',
