@@ -15,9 +15,11 @@ const Comment = () => {
   if (!mounted) return null
 
   return (
-    <div className='my-8'>
-      <Giscus theme={resolvedTheme} {...GISCUS_CONFIG} />
-    </div>
+    GISCUS_CONFIG.repo && (
+      <div className='my-8'>
+        <Giscus theme={resolvedTheme} {...GISCUS_CONFIG} />
+      </div>
+    )
   )
 }
 export default Comment
