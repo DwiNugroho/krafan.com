@@ -45,8 +45,7 @@ const Navbar = () => {
     >
       <div
         className={cn(
-          'container relative z-50 flex w-full items-center justify-between transition-all duration-200',
-          isScrolled ? 'py-6' : 'py-10'
+          'container relative z-50 flex w-full items-center justify-between py-6 transition-all duration-200'
         )}
       >
         <NextLink
