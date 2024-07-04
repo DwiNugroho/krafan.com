@@ -29,7 +29,7 @@ export const generateStaticParams = (): Array<ProjectPageProps['params']> => {
   }))
 }
 
-export const ProjectDetailPage = (props: ProjectPageProps) => {
+export default function ProjectDetailPage(props: ProjectPageProps) {
   const project = getProjectBySlug(props.params.slug)
 
   if (!project) {
@@ -121,5 +121,3 @@ export const ProjectDetailPage = (props: ProjectPageProps) => {
     </div>
   )
 }
-
-export default ProjectDetailPage

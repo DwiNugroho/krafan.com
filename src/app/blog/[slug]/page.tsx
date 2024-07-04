@@ -7,19 +7,19 @@ import Comment from './comment'
 import Header from './header'
 import TableOfContent from './table-of-content'
 
-type ProjectPageProps = {
+type BlogPageProps = {
   params: {
     slug: string
   }
 }
 
-export const generateStaticParams = (): Array<ProjectPageProps['params']> => {
+export const generateStaticParams = (): Array<BlogPageProps['params']> => {
   return getAllBlogPosts().map((blog) => ({
     slug: blog.slug
   }))
 }
 
-export const ProjectDetailPage = (props: ProjectPageProps) => {
+export default function BlogDetailPage(props: BlogPageProps) {
   const blog = getBlogPostBySlug(props.params.slug)
 
   if (!blog) {
@@ -43,5 +43,3 @@ export const ProjectDetailPage = (props: ProjectPageProps) => {
     </div>
   )
 }
-
-export default ProjectDetailPage
