@@ -24,6 +24,7 @@
   ],
   "plugins": ["simple-import-sort", "unused-imports"],
   "rules": {
+    "react-hooks/rules-of-hooks": 0,
     "simple-import-sort/imports": 2,
     "simple-import-sort/exports": 2,
     "unused-imports/no-unused-imports": 2,

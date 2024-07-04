@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 import '@/styles/main.css'
-import { ThemeProvider } from '@/components'
-import { Header } from '@/components'
-import site from '@/lib/config/site'
+import { Footer, Navbar, ProgressProvider, ThemeProvider } from '@/components'
+import site from '@/constants/site'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   ...site,
@@ -22,22 +24,37 @@ export const metadata: Metadata = {
   }
 }
 
+const mona = localFont({
+  src: '../../public/fonts/mona-sans/Mona-Sans.woff2',
+  variable: '--font-mona'
+})
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin']
+})
+
 export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body>
+    <html lang='en' className='scroll-smooth' suppressHydrationWarning>
+      <body className={cn(inter.variable, mona.variable, inter.className)}>
         <ThemeProvider
           attribute='class'
-          defaultTheme='system'
+          defaultTheme='light'
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className='bg-background'>{children}</main>
+          <ProgressProvider>
+            <div className='relative flex min-h-screen flex-col'>
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
+          </ProgressProvider>
         </ThemeProvider>
       </body>
     </html>

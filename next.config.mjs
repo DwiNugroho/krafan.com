@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
+import createJiti from 'jiti'
+import { withContentlayer } from 'next-contentlayer'
+import { fileURLToPath } from 'node:url'
+const jiti = createJiti(fileURLToPath(import.meta.url))
+
+// Import env here to validate during build. Using jiti we can import .ts files :)
+jiti('./src/env')
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -18,25 +26,7 @@ const nextConfig = {
         {
           loader: '@svgr/webpack',
           options: {
-            svgoConfig: {
-              multipass: true,
-              plugins: [
-                {
-                  name: 'preset-default',
-                  params: {
-                    overrides: {
-                      // customize default plugin options
-                      inlineStyles: {
-                        onlyMatchedOnce: false
-                      },
-                      // or disable plugins
-                      removeDoctype: false,
-                      removeViewBox: false
-                    }
-                  }
-                }
-              ]
-            }
+            svgo: false
           }
         }
       ]
@@ -46,4 +36,4 @@ const nextConfig = {
   }
 }
 
-export default nextConfig
+export default withContentlayer(nextConfig)

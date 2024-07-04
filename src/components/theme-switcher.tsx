@@ -19,13 +19,15 @@ const ThemeSwitcher = () => {
       type='button'
       aria-label='Toggle theme'
       onClick={() => {
-        console.log(resolvedTheme)
-
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
     >
-      {mounted && resolvedTheme === 'dark' && <Sun size={20} />}
-      {mounted && resolvedTheme === 'light' && <Moon size={20} />}
+      {mounted && resolvedTheme === 'dark' && (
+        <Moon size={20} strokeWidth={1.4} />
+      )}
+      {mounted && resolvedTheme === 'light' && (
+        <Sun size={20} strokeWidth={1.4} />
+      )}
     </Button>
   )
 }
