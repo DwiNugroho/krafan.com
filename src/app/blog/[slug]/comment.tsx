@@ -22,7 +22,7 @@ const Comment = () => {
           repoId={''}
           mapping={'number'}
           theme={resolvedTheme}
-          {...GISCUS_CONFIG}
+          {...GISCUS_CONFIG()}
         />
       </div>
     )
