@@ -46,6 +46,7 @@ const Footer = () => {
                 key={item.id}
                 href={item.href}
                 className='text-muted-foreground hover:text-foreground'
+                aria-label={item.label}
                 target='_blank'
               >
                 {item.icon}

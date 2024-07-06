@@ -28,7 +28,7 @@ const ProjectCard: React.FC<Project> = (props) => {
         >
           <Image
             src={`/img/projects/${props.slug}/cover.png`}
-            alt={props.name}
+            alt={`${props.name} - Krafan Project`}
             fill
             sizes='100%'
             className='h-full w-full object-cover'

@@ -85,6 +85,7 @@ const Navbar = () => {
             variant='ghost'
             className='md:hidden'
             size='sm'
+            aria-label='navbar toggle'
             onClick={() => setDrawer(!drawer)}
           >
             <RxHamburgerMenu size={24} />

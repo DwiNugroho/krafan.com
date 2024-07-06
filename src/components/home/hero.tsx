@@ -42,6 +42,7 @@ const Hero = () => {
                 href={item.href}
                 key={index}
                 className='text-foreground/60 hover:text-foreground'
+                aria-label={item.label}
                 target='_blank'
               >
                 {item.icon}
@@ -57,6 +58,7 @@ const Hero = () => {
           fill
           sizes='100%'
           lazy={false}
+          quality={40}
         />
         <div className='absolute -right-8 bottom-4 md:-right-16'>
           <div className='flex flex-row'>
