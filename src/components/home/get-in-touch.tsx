@@ -4,6 +4,7 @@ import { motion, useAnimate, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { MdArrowRightAlt } from 'react-icons/md'
 
+import { TYPEFORM_LINK } from '@/constants/links'
 import { cn } from '@/lib/utils'
 
 import { Image } from '../image'
@@ -145,7 +146,8 @@ const GetInTouch = () => {
             to life. Together, we can achieve outstanding results.
           </p>
           <a
-            href='#'
+            href={TYPEFORM_LINK.href}
+            target='_blank'
             className={cn(
               buttonVariants(),
               'mt-4 flex items-center gap-4 rounded-sm md:min-w-[160px]'

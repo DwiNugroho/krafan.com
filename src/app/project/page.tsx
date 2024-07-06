@@ -1,5 +1,56 @@
+import { Metadata, ResolvingMetadata } from 'next'
+
 import { ProjectCard } from '@/components'
+import site from '@/constants/site'
 import { getAllProjects } from '@/lib/mdx'
+import { createOgImageURL } from '@/lib/open-graph'
+
+type ProjectPageProps = {
+  params: Record<string, never>
+  searchParams: Record<string, never>
+}
+
+const title = 'Portfolio'
+const description =
+  'Explore a showcase of my programming development projects, where digital magic comes to life'
+const url = site.url + '/project'
+
+export const generateMetadata = async (
+  _: ProjectPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+  const previousOpenGraph = (await parent)?.openGraph ?? {}
+  const previousTwitter = (await parent)?.twitter ?? {}
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url
+    },
+    openGraph: {
+      ...previousOpenGraph,
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: createOgImageURL('', { title }),
+          width: 1200,
+          height: 630,
+          alt: description,
+          type: 'image/png'
+        }
+      ]
+    },
+    twitter: {
+      ...previousTwitter,
+      title,
+      description,
+      images: [createOgImageURL('', { title })]
+    }
+  }
+}
 
 export default function Project() {
   const projects = getAllProjects()

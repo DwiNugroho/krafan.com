@@ -30,6 +30,11 @@ export const LINKEDIN_LINK: Link = {
   href: 'https://www.linkedin.com/in/dwi-nugroho'
 }
 
+export const TYPEFORM_LINK: Link = {
+  title: 'typeform',
+  href: 'https://dwinugroho246991.typeform.com/to/cm9Zb2am'
+}
+
 export const HEADER_LINKS: HeaderLinks = [
   {
     href: '/blog',

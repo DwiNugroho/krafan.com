@@ -19,16 +19,19 @@ const site: Site = {
   title: 'Krafan',
   name: 'Krafan',
   keywords: [
-    'DwiNugroho',
+    'dwinugroho',
     'Next.js',
     'React',
     'TypeScript',
     'Node.js',
-    'Dwi Nugroho'
+    'Dwi Nugroho',
+    'Krafan',
+    'Dwi Nugroho Linkedin',
+    'Dwi Nugroho Frontend'
   ],
   titleTemplate: '- Krafan',
   description: 'Digital Garden • Creative Portfolio • By Dwi Nugroho',
-  githubUsername: 'DwiNugroho',
+  githubUsername: 'dwinugroho',
   favicons: [
     {
       rel: 'icon',

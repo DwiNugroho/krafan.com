@@ -1,3 +1,4 @@
+import { Metadata, ResolvingMetadata } from 'next'
 import NextLink from 'next/link'
 import { notFound } from 'next/navigation'
 import { FiArrowUpRight } from 'react-icons/fi'
@@ -13,8 +14,10 @@ import {
   BreadcrumbSeparator
 } from '@/components/ui/breadcrumb'
 import { buttonVariants } from '@/components/ui/button'
+import site from '@/constants/site'
 import getIconByName from '@/lib/get-icon-by-name'
 import { getAllProjects, getProjectBySlug } from '@/lib/mdx'
+import { createOgImageURL } from '@/lib/open-graph'
 import { cn, validateAndAddHttps } from '@/lib/utils'
 
 type ProjectPageProps = {
@@ -27,6 +30,56 @@ export const generateStaticParams = (): Array<ProjectPageProps['params']> => {
   return getAllProjects().map((project) => ({
     slug: project.slug
   }))
+}
+
+export const generateMetadata = async (
+  props: ProjectPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+  const previousOpenGraph = (await parent)?.openGraph ?? {}
+  const previousTwitter = (await parent)?.twitter ?? {}
+
+  const post = getProjectBySlug(props.params.slug)
+  if (!post) return {}
+
+  const title = post.name
+  const description = post.description
+  const url = `${site.url}/project/${post.slug}`
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url
+    },
+    openGraph: {
+      ...previousOpenGraph,
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: createOgImageURL('/project', {
+            img: `${site.url}/img/projects/${post.slug}/cover.png`
+          }),
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: 'image/png'
+        }
+      ]
+    },
+    twitter: {
+      ...previousTwitter,
+      title,
+      description,
+      images: [
+        createOgImageURL('/project', {
+          img: `${site.url}/img/projects/${post.slug}/cover.png`
+        })
+      ]
+    }
+  }
 }
 
 export default function ProjectDetailPage(props: ProjectPageProps) {

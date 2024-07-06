@@ -1,7 +1,10 @@
+import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import Mdx from '@/components/mdx'
+import site from '@/constants/site'
 import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/mdx'
+import { createOgImageURL } from '@/lib/open-graph'
 
 import Comment from './comment'
 import Header from './header'
@@ -17,6 +20,63 @@ export const generateStaticParams = (): Array<BlogPageProps['params']> => {
   return getAllBlogPosts().map((blog) => ({
     slug: blog.slug
   }))
+}
+
+export const generateMetadata = async (
+  props: BlogPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> => {
+  const previousOpenGraph = (await parent)?.openGraph ?? {}
+  const previousTwitter = (await parent)?.twitter ?? {}
+
+  const post = getBlogPostBySlug(props.params.slug)
+  if (!post) return {}
+
+  const title = post.title
+  const description = post.summary
+  const url = `${site.url}/blog/${post.slug}`
+  const ISOPublishedTime = new Date(post.date).toISOString()
+  const ISOModifiedTime = new Date(post.modifiedTime).toISOString()
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url
+    },
+    openGraph: {
+      ...previousOpenGraph,
+      type: 'article',
+      url,
+      title,
+      description,
+      publishedTime: ISOPublishedTime,
+      modifiedTime: ISOModifiedTime,
+      images: [
+        {
+          url: createOgImageURL('/blog', {
+            title,
+            date: post.date.split('T')[0]
+          }),
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: 'image/png'
+        }
+      ]
+    },
+    twitter: {
+      ...previousTwitter,
+      title,
+      description,
+      images: [
+        createOgImageURL('/blog', {
+          title,
+          date: post.date.split('T')[0]
+        })
+      ]
+    }
+  }
 }
 
 export default function BlogDetailPage(props: BlogPageProps) {

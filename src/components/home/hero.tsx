@@ -3,7 +3,7 @@ import { MdArrowRightAlt } from 'react-icons/md'
 import { Image, ReactangleCard } from '@/components'
 import { Pointer } from '@/components/svg'
 import { buttonVariants } from '@/components/ui/button'
-import { HERO_LINKS, LINKEDIN_LINK } from '@/constants/links'
+import { HERO_LINKS, LINKEDIN_LINK, TYPEFORM_LINK } from '@/constants/links'
 import { cn } from '@/lib/utils'
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
         </ReactangleCard>
         <h1 className='font-mona text-3xl leading-[40px] tracking-wide lg:text-5xl lg:leading-[60px] xl:text-6xl xl:leading-[80px]'>
           I&apos;m{' '}
-          <a href={LINKEDIN_LINK.href} className='font-bold'>
+          <a href={LINKEDIN_LINK.href} target='_blank' className='font-bold'>
             Dwi Nugroho
           </a>
           , Frontend Engineer
@@ -26,7 +26,8 @@ const Hero = () => {
         </p>
         <div className='flex items-center gap-6'>
           <a
-            href='#'
+            href={TYPEFORM_LINK.href}
+            target='_blank'
             className={cn(
               buttonVariants(),
               'flex items-center gap-4 rounded-sm md:min-w-[160px]'
