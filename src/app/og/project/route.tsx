@@ -4,16 +4,7 @@ import { NextResponse } from 'next/server'
 import site from '@/constants/site'
 import { cn } from '@/lib/utils'
 
-// Route segment config
 export const runtime = 'edge'
-
-export const alt = 'Open Graph Image'
-export const size = {
-  width: 1200,
-  height: 630
-}
-
-export const contentType = 'image/png'
 
 export const GET = async (req: Request) => {
   try {
@@ -49,7 +40,8 @@ export const GET = async (req: Request) => {
         </div>
       ),
       {
-        ...size
+        width: 1200,
+        height: 630
       }
     )
   } catch (error) {
