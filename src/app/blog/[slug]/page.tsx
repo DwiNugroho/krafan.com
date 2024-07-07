@@ -1,5 +1,6 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+import type { Article, WithContext } from 'schema-dts'
 
 import Mdx from '@/components/mdx'
 import site from '@/constants/site'
@@ -86,20 +87,50 @@ export default function BlogDetailPage(props: BlogPageProps) {
     return notFound()
   }
 
+  const jsonLd: WithContext<Article> = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+
+    headline: blog.title,
+    description: blog.summary,
+    datePublished: blog.date,
+    dateModified: blog.modifiedTime,
+    image: createOgImageURL('/blog', {
+      title: blog.title,
+      date: blog.date.split('T')[0]
+    }),
+    author: {
+      '@type': 'Person',
+      name: site.githubUsername,
+      url: site.url
+    },
+    publisher: {
+      '@type': 'Person',
+      name: site.githubUsername,
+      url: site.url
+    }
+  }
+
   return (
-    <div className='container space-y-16 py-8'>
-      <Header {...blog} />
-      <div className='grid grid-cols-3 gap-20'>
-        <div className='col-span-3 lg:col-span-2'>
-          <Mdx code={blog.body.code} />
+    <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className='container space-y-16 py-8'>
+        <Header {...blog} />
+        <div className='grid grid-cols-3 gap-20'>
+          <div className='col-span-3 lg:col-span-2'>
+            <Mdx code={blog.body.code} />
+          </div>
+          <div className='hidden lg:inline'>
+            <TableOfContent {...blog} />
+          </div>
         </div>
-        <div className='hidden lg:inline'>
-          <TableOfContent {...blog} />
+        <div className='mx-auto max-w-[800px]'>
+          <Comment />
         </div>
       </div>
-      <div className='mx-auto max-w-[800px]'>
-        <Comment />
-      </div>
-    </div>
+    </>
   )
 }
