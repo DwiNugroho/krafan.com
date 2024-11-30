@@ -31,5 +31,7 @@ ENV NODE_ENV=production
 # Copy file .env.production
 COPY .env.production .env
 
+EXPOSE 3000
+
 # Jalankan aplikasi
 CMD ["yarn", "start"]
